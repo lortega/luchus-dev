@@ -3,6 +3,10 @@ site_url: https://docs.valopes.com/
 theme:
   name: material
   language: es
+  favicon: assets/favicon.ico
+  logo: assets/logowhite.svg
+  palette:
+    primary: teal
 
 extra:
   alternate:
