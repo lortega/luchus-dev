@@ -4,9 +4,6 @@
 # Python bytecode cache
 __pycache__/
 
-# MkDocs configuration file
-/mkdocs.yml
-
 # Virtual environment
 /venv/
 
