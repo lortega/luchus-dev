@@ -13,8 +13,7 @@ extra:
       link: /es
 
 plugins:
-  - search:
-      enabled: true
+  - search
   - i18n:
       docs_structure: folder
       languages:
