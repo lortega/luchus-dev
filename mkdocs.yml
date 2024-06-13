@@ -1,14 +1,43 @@
 site_name: Valopes Documentation
 site_url: https://docs.valopes.com/
+repo_url: https://github.com/valopes-lab/valopes-docs
+repo_name: valopes-lab/valopes-docs
+edit_uri: edit/master/docs/
+copyright: Copyright &copy; 2023 - 2024 Valopes
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 theme:
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+  features:
+    - content.action.edit
+    - content.action.view
   name: material
   language: es
   favicon: assets/favicon.ico
   logo: assets/logo.svg
+  # repo_url: https://github.com/valopes-lab/valopes-docs
   palette:
     primary: teal
+  # icon:
+  #   repo: fontawesome/brands/git-alt
 
 extra:
+  generator: false
   alternate:
     - name: English
       lang: en
@@ -16,6 +45,9 @@ extra:
     - name: Español
       lang: es
       link: /es/
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/valopes-lab/valopes-docs
 
 plugins:
   - search:
