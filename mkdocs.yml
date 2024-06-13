@@ -1,3 +1,18 @@
-site_name: My Docs
-theme:
+site_name: Valopes Documentation
+theme: # alternatives are: mkdocs, readthedocs and material.
   name: material
+  language: es
+
+plugins:
+  - search:
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: es
+          default: true
+          name: Español
+          build: true
+        - locale: en
+          default: false
+          name: English
+          build: true
