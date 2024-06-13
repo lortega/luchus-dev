@@ -7,10 +7,10 @@ extra:
   alternate:
     - name: English
       lang: en
-      link: /en
+      link: en
     - name: Español
       lang: es
-      link: /es
+      link: es
 
 plugins:
   - search:
