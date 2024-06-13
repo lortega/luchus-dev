@@ -4,7 +4,7 @@ theme:
   name: material
   language: es
   favicon: assets/favicon.ico
-  logo: assets/logowhite.svg
+  logo: assets/logo.svg
   palette:
     primary: teal
 
