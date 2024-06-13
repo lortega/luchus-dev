@@ -35,6 +35,6 @@ jobs:
           publish_branch: gh-pages
           # cname: <your-custom-domain>
 
-      - name: Cleanup
-        run: |
-          rm -rf ./site
+#      - name: Cleanup
+#        run: |
+#          rm -rf ./site
