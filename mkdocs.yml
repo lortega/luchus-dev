@@ -1,4 +1,5 @@
 site_name: Valopes Documentation
+site_url: https://docs.valopes.com/
 theme:
   name: material
   language: es
