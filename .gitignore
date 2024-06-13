@@ -1,0 +1,22 @@
+# MkDocs site directory (generated HTML)
+/site/
+
+# Python bytecode cache
+__pycache__/
+
+# MkDocs configuration file
+/mkdocs.yml
+
+# Virtual environment
+/venv/
+
+# IDE-specific files (adjust as per your IDE)
+.vscode/
+.idea/
+
+# macOS specific files
+.DS_Store
+
+# Editor backup files
+*~
+
