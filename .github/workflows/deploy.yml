@@ -33,7 +33,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           publish_branch: gh-pages
-          # cname: <your-custom-domain>
+          cname: docs.valopes.com
 
 #      - name: Cleanup
 #        run: |
