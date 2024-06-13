@@ -1,5 +1,5 @@
 site_name: Valopes Documentation
-theme: # alternatives are: mkdocs, readthedocs and material.
+theme:
   name: material
   language: es
 
@@ -7,13 +7,13 @@ extra:
   alternate:
     - name: English
       lang: en
-      link: en
+      link: /en
     - name: Español
       lang: es
-      link: es
+      link: /es
 
 plugins:
-  - search:
+  - search
   - i18n:
       docs_structure: folder
       languages:
