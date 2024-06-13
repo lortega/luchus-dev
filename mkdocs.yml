@@ -24,6 +24,9 @@ theme:
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
     - content.action.edit
     - content.action.view
   name: material
