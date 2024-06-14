@@ -1,4 +1,4 @@
-# Bienvenido
+# Inicio
 
 Valopes es una plataforma empresarial B2B diseñada 
 para mejorar la eficiencia y productividad de tu 
