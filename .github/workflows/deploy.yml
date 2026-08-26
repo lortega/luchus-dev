@@ -1,39 +1,39 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy a GitHub Pages
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un despliegue a la vez; no cancela el que ya está corriendo.
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v5
 
-      - name: Set Up Python
-        uses: actions/setup-python@v2
+      - name: Build con Astro
+        uses: withastro/action@v6
         with:
-          python-version: '3.12'
+          node-version: 22
 
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Build MkDocs Site
-        run: |
-          mkdocs build --clean
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
-          publish_branch: gh-pages
-          cname: docs.valopes.com
-
-      - name: Cleanup
-        run: |
-          rm -rf ./site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v5

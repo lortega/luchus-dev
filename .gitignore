@@ -1,19 +1,18 @@
-# MkDocs site directory (generated HTML)
-/site/
+# dependencias
+node_modules/
 
-# Python bytecode cache
-__pycache__/
+# salida de build
+dist/
+.astro/
 
-# Virtual environment
-/venv/
+# entorno
+.env
+.env.production
 
-# IDE-specific files (adjust as per your IDE)
+# editores
 .vscode/
 .idea/
-
-# macOS specific files
-.DS_Store
-
-# Editor backup files
 *~
 
+# macOS
+.DS_Store

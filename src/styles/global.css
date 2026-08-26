@@ -1,0 +1,670 @@
+/* ── luchus.dev ─────────────────────────────────────────────────────────────
+   Dirección: "bitácora". Tinta oxblood sobre papel con tinte salvia.
+   Display: Bricolage Grotesque · Lectura: Literata · Utilidad: IBM Plex Mono
+   ──────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --paper: #eff2ec;
+  --paper-raised: #e5e9e1;
+  --rule: #cfd6ca;
+  --ink: #171c19;
+  --ink-soft: #3e4642;
+  --muted: #5e6760;
+  --accent: #8c2f39;
+  --selection: #e4c9cb;
+
+  --display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --body: var(--font-body), Georgia, serif;
+  --mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --step--1: 0.8125rem;
+  --step-0: clamp(1.0625rem, 1.02rem + 0.22vw, 1.1875rem);
+  --step-1: clamp(1.1875rem, 1.11rem + 0.38vw, 1.375rem);
+  --step-2: clamp(1.75rem, 1.42rem + 1.6vw, 2.75rem);
+  --step-3: clamp(2.1rem, 1.5rem + 3vw, 4rem);
+  --step-year: clamp(1.75rem, 1.3rem + 2.2vw, 2.75rem);
+
+  --medida: 34rem;
+  --ancho: 46rem;
+  --canal: 3.25rem;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141815;
+    --paper-raised: #1b211d;
+    --rule: #2c332e;
+    --ink: #e3e7df;
+    --ink-soft: #b6bdb4;
+    --muted: #838c84;
+    --accent: #d07079;
+    --selection: #4a2c30;
+
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Estructura ───────────────────────────────────────────────────────── */
+
+.envoltura {
+  width: min(100% - 2.5rem, var(--ancho));
+  margin-inline: auto;
+}
+
+.saltar {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--paper);
+  padding: 0.6rem 1rem;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  z-index: 10;
+}
+
+.saltar:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ── Etiquetas de utilidad (mono) ─────────────────────────────────────── */
+
+.mono {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.rotulo {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* ── Encabezado del sitio ─────────────────────────────────────────────── */
+
+.cabecera {
+  padding-block: 1.75rem 0;
+}
+
+.cabecera__fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.marca {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.marca__punto {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav a {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+  text-decoration: none;
+  padding-block: 0.15rem;
+  border-bottom: 1px solid transparent;
+}
+
+.nav a:hover,
+.nav a[aria-current='page'] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Pie ──────────────────────────────────────────────────────────────── */
+
+.pie {
+  margin-top: 5rem;
+}
+
+.pie__fila {
+  border-top: 1px solid var(--rule);
+  padding-block: 1.75rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+.pie a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pie a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* ── Portada ──────────────────────────────────────────────────────────── */
+
+.portada {
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.portada__tesis {
+  font-family: var(--display);
+  font-size: var(--step-3);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  margin: 0 0 1.5rem;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+
+.portada__tesis em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.portada__nota {
+  max-width: var(--medida);
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* ── El registro (la bitácora) ────────────────────────────────────────── */
+
+.registro {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.registro__anio {
+  display: grid;
+  grid-template-columns: var(--canal) 1px 1fr;
+  column-gap: 1.25rem;
+  margin-block: 2.5rem 0;
+}
+
+.registro__anio:first-child {
+  margin-top: 0;
+}
+
+.registro__anio span {
+  grid-column: 3;
+  padding-left: 1.25rem;
+  font-family: var(--display);
+  font-size: var(--step-year);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.entrada {
+  display: grid;
+  grid-template-columns: var(--canal) 1px 1fr;
+  column-gap: 1.25rem;
+}
+
+.entrada__folio {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  text-align: right;
+  padding-top: 1.45rem;
+  transition: color 0.18s ease;
+}
+
+/* El riel: una línea continua que los años interrumpen. */
+.entrada__riel {
+  background: var(--rule);
+  position: relative;
+}
+
+.entrada__riel::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 1.65rem;
+  width: 7px;
+  height: 7px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.entrada__cuerpo {
+  position: relative;
+  padding-block: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.entrada:last-child .entrada__cuerpo {
+  padding-bottom: 1.5rem;
+}
+
+.entrada__enlace {
+  text-decoration: none;
+  display: block;
+}
+
+.entrada__enlace::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.entrada__titulo {
+  font-family: var(--display);
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0.15rem 0 0.35rem;
+  text-wrap: balance;
+}
+
+.entrada__resumen {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  max-width: 44ch;
+}
+
+.entrada__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+}
+
+.entrada:hover .entrada__folio {
+  color: var(--accent);
+}
+
+.entrada:hover .entrada__riel::after {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.entrada:hover .entrada__titulo {
+  color: var(--accent);
+}
+
+/* Entrada en escena: un solo gesto, escalonado por posición. */
+@media (prefers-reduced-motion: no-preference) {
+  .registro > * {
+    animation: asomar 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 45ms + 60ms);
+  }
+}
+
+@keyframes asomar {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+/* ── Etiquetas ────────────────────────────────────────────────────────── */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tags li {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.05rem 0.4rem;
+}
+
+/* ── Entrada individual ───────────────────────────────────────────────── */
+
+.articulo {
+  padding-block: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+.articulo__cabecera {
+  max-width: var(--medida);
+  margin-bottom: 2.5rem;
+}
+
+.articulo__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+.articulo__meta .sep {
+  color: var(--rule);
+}
+
+.articulo__titulo {
+  font-family: var(--display);
+  font-size: var(--step-2);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  margin: 0 0 0.75rem;
+  text-wrap: balance;
+}
+
+.articulo__resumen {
+  margin: 0 0 1.25rem;
+  color: var(--ink-soft);
+  font-size: var(--step-1);
+  line-height: 1.45;
+}
+
+.articulo__regla {
+  border: 0;
+  border-top: 2px solid var(--accent);
+  width: 3rem;
+  margin: 0;
+}
+
+/* ── Prosa ────────────────────────────────────────────────────────────── */
+
+.prosa {
+  max-width: var(--medida);
+}
+
+.prosa > * + * {
+  margin-top: 1.4em;
+}
+
+.prosa h2,
+.prosa h3 {
+  font-family: var(--display);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-top: 2.6em;
+  margin-bottom: 0.6em;
+  text-wrap: balance;
+}
+
+.prosa h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.prosa h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.prosa a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+}
+
+.prosa strong {
+  font-weight: 700;
+}
+
+.prosa ul,
+.prosa ol {
+  padding-left: 1.25rem;
+}
+
+.prosa li + li {
+  margin-top: 0.4em;
+}
+
+.prosa li::marker {
+  color: var(--accent);
+}
+
+.prosa blockquote {
+  margin-inline: 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.prosa code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--paper-raised);
+  border-radius: 2px;
+  padding: 0.1em 0.32em;
+}
+
+.prosa pre {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  background: var(--paper-raised) !important;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+}
+
+.prosa pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.prosa hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin-block: 2.5em;
+}
+
+.prosa img {
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+}
+
+@media (prefers-color-scheme: dark) {
+  .prosa .astro-code,
+  .prosa .astro-code span {
+    color: var(--shiki-dark) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
+
+/* ── Navegación entre entradas ────────────────────────────────────────── */
+
+.vecinas {
+  margin-top: 4rem;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  gap: 1px;
+  background: var(--rule);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40em) {
+  .vecinas {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.vecina {
+  background: var(--paper);
+  padding: 1.25rem 0;
+  text-decoration: none;
+  display: block;
+}
+
+.vecina--sig {
+  text-align: left;
+}
+
+@media (min-width: 40em) {
+  .vecina--sig {
+    text-align: right;
+    padding-left: 1.5rem;
+  }
+
+  .vecina--ant {
+    padding-right: 1.5rem;
+  }
+}
+
+.vecina__titulo {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+.vecina:hover .vecina__titulo {
+  color: var(--accent);
+}
+
+/* ── Página simple ────────────────────────────────────────────────────── */
+
+.pagina {
+  padding-block: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+.pagina__titulo {
+  font-family: var(--display);
+  font-size: var(--step-2);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  margin: 0 0 2rem;
+}
+
+/* ── Angosto ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 34em) {
+  :root {
+    --canal: 2.25rem;
+  }
+
+  .entrada {
+    column-gap: 0.85rem;
+  }
+
+  .entrada__cuerpo {
+    padding-left: 0.85rem;
+  }
+
+  .entrada__resumen {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.entrada__fecha {
+  color: var(--muted);
+}
+
+.tesis-nota {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+  margin: 2.5rem 0 1.25rem;
+}
+
+.vacio {
+  border: 1px dashed var(--rule);
+  border-radius: 3px;
+  padding: 2rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+}

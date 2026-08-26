@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITIO } from '../consts';
+import { leerRegistro, folio, fechaCorta, iso, anio, type Registro } from '../lib/bitacora';
+
+type Fila = { tipo: 'anio'; anio: number } | ({ tipo: 'entrada' } & Registro);
+
+const registros = await leerRegistro();
+
+const filas: Fila[] = [];
+let ultimoAnio: number | null = null;
+for (const registro of registros) {
+  const a = anio(registro.entrada.data.fecha);
+  if (a !== ultimoAnio) {
+    filas.push({ tipo: 'anio', anio: a });
+    ultimoAnio = a;
+  }
+  filas.push({ tipo: 'entrada', ...registro });
+}
+---
+
+<Base titulo={SITIO.titulo} descripcion={SITIO.descripcion}>
+  <div class="envoltura">
+    <section class="portada">
+      <h1 class="portada__tesis">
+        Una bitácora de lo que construyo, <em>rompo</em> y vuelvo a armar.
+      </h1>
+      <p class="portada__nota">
+        Soy {SITIO.autor}, desarrollador. Acá anoto decisiones técnicas, errores que salieron
+        caros y lo que entendí recién después. En español, sin resúmenes ejecutivos.
+      </p>
+    </section>
+
+    <p class="tesis-nota">el registro, de lo más reciente a lo más antiguo</p>
+
+    {
+      filas.length === 0 ? (
+        <p class="vacio">
+          Todavía no hay entradas. La primera va en <code>src/content/bitacora/</code>.
+        </p>
+      ) : (
+        <div class="registro">
+          {filas.map((fila, i) =>
+            fila.tipo === 'anio' ? (
+              <h2 class="registro__anio" style={`--i:${i}`}>
+                <span>{fila.anio}</span>
+              </h2>
+            ) : (
+              <article class="entrada" style={`--i:${i}`}>
+                <div class="entrada__folio">{folio(fila.folio)}</div>
+                <div class="entrada__riel" aria-hidden="true" />
+                <div class="entrada__cuerpo">
+                  <div class="entrada__meta">
+                    <time class="mono entrada__fecha" datetime={iso(fila.entrada.data.fecha)}>
+                      {fechaCorta(fila.entrada.data.fecha)}
+                    </time>
+                    {fila.entrada.data.tags.length > 0 && (
+                      <ul class="tags">
+                        {fila.entrada.data.tags.map((t) => (
+                          <li>{t}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  <h3 class="entrada__titulo">
+                    <a class="entrada__enlace" href={`/bitacora/${fila.entrada.id}/`}>
+                      {fila.entrada.data.titulo}
+                    </a>
+                  </h3>
+                  <p class="entrada__resumen">{fila.entrada.data.resumen}</p>
+                </div>
+              </article>
+            ),
+          )}
+        </div>
+      )
+    }
+  </div>
+</Base>

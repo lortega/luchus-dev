@@ -1,0 +1,27 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Cabecera from '../components/Cabecera.astro';
+import Pie from '../components/Pie.astro';
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  tipo?: 'website' | 'article';
+  fecha?: Date;
+}
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead {...Astro.props} />
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <Cabecera />
+    <main id="contenido">
+      <slot />
+    </main>
+    <Pie />
+  </body>
+</html>
