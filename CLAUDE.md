@@ -134,6 +134,36 @@ desconocido con un currículum. La portada (`src/pages/index.astro`) repite la
 tesis y la página `/about/` es la que carga la credibilidad. Si algo cambia acá,
 que cambien los tres juntos.
 
+### Consigna
+
+Hipótesis de trabajo, elegida el 2026-08-27:
+
+> **Most software assumes too much.**
+
+Sigue la forma de las consignas que Luis toma como referencia —"It doesn't have to
+be crazy at work"— que es siempre la misma: *la industria dice que X es necesario;
+no lo es*. Una negación con enemigo nombrado. Acá el enemigo es el supuesto.
+
+Tiene dos caras y las dos cuentan:
+
+- **Negativa**: cada post puede ser otro supuesto que se rompió. La red. La
+  batería. Que el usuario quiera estar ahí. Que alguien lea el error. Que haya un
+  escritorio. Sirve de generador de temas, no solo de identidad.
+- **Positiva**: defender la clase de software que no hace esos supuestos —
+  aplicaciones de terreno, offline, para gente que trabaja de pie. Luis lo puso
+  así: la consigna sirve para "defender este tipo de aplicaciones". El tono no es
+  solo crítica; es reivindicación.
+
+**No va en el sitio todavía**, y es deliberado. Se usa como criterio privado
+durante los primeros seis u ocho posts: si cada uno cabe bajo la frase, se
+publica; si a los tres ya queda apretada, era un eslogan y no una consigna. Una
+consigna declarada antes de la obra no tiene con qué respaldarse — 37signals llegó
+a la suya después de quince años de hacerlo, no antes.
+
+Al revisar un borrador, la pregunta es si cabe bajo la consigna. Si no cabe, no
+significa que el post sea malo: significa que hay que decidir a propósito si la
+consigna se estira o el post se guarda.
+
 ## Git
 
 Trabajo en solitario, y así va a seguir. No hay ramas de feature ni pull requests:
