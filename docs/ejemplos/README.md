@@ -1,9 +1,9 @@
 # Ejemplos de voz
 
-Muestras de escritura de Luis, sin editar. Alimentan `../voz.md`.
+Prompts de Luis, sin editar. Son la **única** fuente válida para `../voz.md`.
 
-Regla única: **solo texto que él haya escrito**, sin asistencia de modelo y sin
-edición posterior. Una muestra retocada es peor que ninguna, porque encodea una
-voz que no existe.
+Todo lo demás que parece suyo —los ADR de captalog-app, `docs/`, las entradas de
+partida— pasó por un modelo. Se lee como él y no es él. Si un texto pasó por una
+IA, no es muestra, aunque el contenido sea suyo y esté firmado por él.
 
 Cada archivo lleva cabecera con fecha, medio y contexto.

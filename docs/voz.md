@@ -3,103 +3,89 @@
 Cómo escribe Luis. Este archivo existe para que cualquiera —persona o modelo—
 pueda redactar un borrador que suene a él y no a prosa de blog genérica.
 
-> **Estado: confirmado para inglés técnico, provisional para ensayo.** Los ADR de
-> `captalog-app` confirmaron el registro; su voz de ensayo en inglés sigue sin
-> muestra. Ver "Cómo alimentar esto" al final.
-
 ## Fuentes
 
-**Válidas** (escritas por él):
-- Mensajes de conversación — ver `ejemplos/`.
-- Mensajes de commit anteriores a `ad513a5` (junio 2024, en inglés).
-- Los ADR de `captalog-app` que él firma —`docs/adr/008` y `docs/adr/014`— en
-  inglés técnico. **Ese repo es privado y este es público: no copiar su contenido
-  acá.** Se leen allá; acá solo quedan las observaciones.
+**La única fuente válida son sus prompts**: lo que escribe él, directo, sin
+asistencia. Están en `ejemplos/`.
 
-**Ojo con la autoría**: en `captalog-app` también escribe Garri Figueroa (ADR 021
-y 030). Verificar con `git log` antes de tomar un ADR como muestra.
+**No válidas, y conviene saber por qué:**
 
-**No válidas**:
-- Las tres entradas en `src/content/bitacora/`. Las agregó el commit `ad513a5`,
-  co-autoreado por un modelo, y el propio mensaje dice que son contenido de
-  partida para reemplazar. **No derivar la voz de ahí.** Usan voseo rioplatense
-  ("escribís", "sacás") que él no usa.
+- **Los ADR y todo `docs/` de `captalog-app`.** Los escribe con ayuda de IA. Se
+  leen como suyos y no lo son: tienen una voz aforística y doctrinaria
+  —"CLAUDE.md es caché, no casa"— que no es la de Luis. Es la trampa más fácil
+  de caer en este repo, porque es material técnico, firmado por él y bien escrito.
+  **No usarlos.**
+- **Las tres entradas de `src/content/notes/`.** Contenido de partida del commit
+  `ad513a5`, co-autoreado por un modelo. Voseo rioplatense que él no usa.
+- **Los mensajes de commit.** Los anteriores a `ad513a5` (junio 2024) son suyos,
+  pero "Adds custom domain" no tiene voz suficiente para servir de muestra.
+
+Regla general: **si un texto pasó por un modelo, no es muestra.** Aunque él lo
+haya dirigido, aunque esté firmado por él, aunque el contenido sea suyo.
 
 ## Rasgos observados
 
-Cada uno con la evidencia que lo respalda. Si un rasgo no tiene evidencia, no está.
+Cada uno con la evidencia que lo respalda.
 
-1. **Piensa en voz alta y deja las costuras visibles.** Usa `....` para marcar el
-   giro de un pensamiento a otro, no como suspenso.
+1. **Piensa en voz alta y deja el giro visible.** Usa `....` y `…` para marcar
+   dónde cambia de pensamiento, no como suspenso.
    > "Ahora.... en inglés o español .... la verdad es que en español la gente no
    > pesca tanto"
 
-2. **Trae marcos de ciencias sociales a decisiones técnicas y comerciales**, y los
-   capitaliza como conceptos.
-   > "es Capital Simbólico. y con el Capital Simbólico puedo obtener Capital Económico"
+2. **Pregunta de vuelta.** Casi todos sus mensajes terminan pidiendo opinión o
+   contraste. No busca confirmación: busca fricción.
+   > "Piensas lo mismo?" · "No crees que sería bueno hablar de la IA?" ·
+   > "Te puedo sugerir algo yo?" · "que opinan mis advisors que deberíamos hacer?"
 
-   Esto es lo más distintivo que tiene. Hay cientos escribiendo sobre CRDTs;
-   ninguno aplicando Bourdieu a un SaaS de inspecciones mineras. **Es el primer
-   rasgo que se pierde al escribir en inglés. Defenderlo.**
+3. **Enmarca por descubrimiento, no por doctrina.** Empieza por cuándo se dio
+   cuenta, no por la conclusión.
+   > "el otro día me di cuenta que es bueno tener una documentación 360"
 
-3. **Pide fricción, no confirmación.**
-   > "Piensas lo mismo?" / "quizá entrevistame para que veamos qué expertos
-   > adicionales me pueden ayudar"
+   **Es el rasgo más importante para el blog.** Sus posts deberían abrir así, no
+   enunciando una tesis.
 
-4. **Admite lo que no sabe, sin adorno.**
-   > "No sé qué más...." / "no sé .... quizá"
+4. **Dice la cosa, y después la dice más concreta.** Suele usar "O sea" para
+   reformular.
+   > "es bueno tener la documentación del código exacto y llegar a tener
+   > documentado incluso que hace la empresa. Desde un lado al otro"
 
-5. **Chileno sin esfuerzo, nunca impostado.** "la gente no pesca tanto",
-   "Convengamos que". No neutraliza su español, pero tampoco lo exhibe.
+5. **Corrige de frente, sin suavizar.** No usa preámbulos para discrepar.
+   > "No, no me gusta eso" · "No se de donde sacas que yo escribo así"
 
-6. **Enumera sin jerarquizar, y luego admite que lo quiere todo.**
-   > "quiero vender CaptaLog, ser referente técnico, levantar capital y poder
-   > hacer consultorías"
+6. **Trae marcos conceptuales y los capitaliza**, mezclados con habla coloquial.
+   > "es Capital Simbólico. y con el Capital Simbólico puedo obtener Capital
+   > Económico"
 
-7. **Frases cortas. Pocas subordinadas. Cero emoji. Cero jerga de marketing.**
+7. **Chileno sin esfuerzo.** "la gente no pesca tanto", "Convengamos que". No
+   neutraliza su español ni lo exhibe.
 
-8. **En inglés (commits): tercera persona del presente, sin punto final, sin
-   prefijos de scope.** "Adds custom domain", "Removes search", "Restores search".
-   Directo, sin adjetivos.
+8. **Corto.** Rara vez pasa de cuatro oraciones. Cierra con superlativo simple:
+   > "mientras más detallada sea la documentación mejor"
 
-9. **En inglés técnico (ADR), rasgos observados en el 014:**
-   - Razona por alternativas pesadas, no por narrativa: contexto → opciones →
-     decisión → costos → consecuencias.
-   - Aterriza el problema en un caso numérico concreto en vez de dejarlo
-     abstracto.
-   - Cita con precisión —capítulos, no nombres sueltos.
-   - Declara el costo de su propia decisión sin suavizarlo, y no vende la
-     solución que eligió.
-   - Oraciones cortas, voz activa, cero adjetivos de venta.
+9. **Escribe rápido y sin editar**: tildes que faltan, espacios antes del signo
+   de pregunta. No es un rasgo a imitar, pero sí la señal de que su registro
+   natural es hablado, no redactado.
 
-   Esto **confirma** el registro recomendado abajo: la conjetura era correcta.
+## Qué significa esto para escribir en inglés
 
-## Reglas para escribir en inglés
+Su voz vive en la informalidad y en el pensar en voz alta. Nada de eso sobrevive
+una traducción hecha con cuidado — y ese es el riesgo concreto del que se habló
+al elegir inglés, ya no en abstracto.
 
-El inglés es segunda lengua. El riesgo no es cometer errores: es sonar a nadie.
-
-- **Registro objetivo**: Kleppmann o patio11 — llano, oraciones cortas, técnico
-  sin ornamento. **No** el registro ensayístico-literario; ahí se pierde.
-- **Prohibido**: modismos que él no usaría al hablar, frases hechas de tech
-  Twitter ("here's the thing", "let that sink in"), aliteración, tricolon
-  retórico, preguntas retóricas encadenadas.
-- **Obligatorio**: el marco conceptual explícito cuando lo haya. Si un post trata
-  de sync, y la razón por la que importa es que la evidencia legal de una
-  inspección no puede perderse, eso se dice.
-- **La restricción técnica va en inglés; la postal chilena no.** "Sync when a
-  device is offline for ten hours" es contenido técnico. La faena es evidencia,
-  no ambientación.
-- Un post, una tesis. Si hay dos, son dos posts.
+- **Registro objetivo**: técnico conversacional. Primera persona, oraciones
+  cortas, admitir lo que no se sabe, abrir por el descubrimiento.
+  Justin Jackson o DHH, **no** Kleppmann ni un ADR.
+- **Abrir siempre por cuándo se dio cuenta**, no por la tesis. La tesis va
+  después, y sale del caso.
+- **Prohibido**: registro de documento —"The system is organized by…"—, prosa de
+  ensayo ornamentada, frases hechas de tech Twitter ("here's the thing"),
+  preguntas retóricas encadenadas, hedges ("it could be argued").
+- **Obligatorio**: decir el costo de la propia decisión, y dejar a la vista lo
+  que todavía no está resuelto. Él lo hace todo el tiempo.
+- Un post, una cosa. Si hay dos, son dos posts.
 
 ## Cómo alimentar esto
 
-Este archivo mejora con muestras reales. Lo más útil, en orden:
-
-1. Descripciones largas de pull request escritas por él.
-2. Respuestas largas suyas en Slack, sobre todo desacuerdos técnicos.
-3. Correos a clientes de CaptaLog.
-4. Cualquier texto en inglés que haya escrito sin asistencia.
-
-Guardarlas en `ejemplos/` como archivos separados, con fecha y contexto en la
-cabecera. Con 5–6 muestras reales, los rasgos de arriba se pueden confirmar,
-corregir o descartar.
+Guardar sus prompts en `ejemplos/`, sin editar, con fecha y contexto. Nada más
+califica. Si algún día escribe un texto largo sin asistencia —un correo, una
+respuesta larga en Slack, un borrador crudo— eso vale más que todo lo de acá.
