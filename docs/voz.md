@@ -83,6 +83,10 @@ al elegir inglés, ya no en abstracto.
 - **Obligatorio**: decir el costo de la propia decisión, y dejar a la vista lo
   que todavía no está resuelto. Él lo hace todo el tiempo.
 - Un post, una cosa. Si hay dos, son dos posts.
+- **Largo objetivo: 250–350 palabras.** Un minuto de lectura. Luis rechazó por
+  largos un borrador de 1.138 palabras y otro de 514; el de 638 lo aceptó a
+  regañadientes. Escribe corto y quiere leer corto. Si un tema no cabe, es más de
+  un post — no una excusa para estirarse.
 
 ## Hechos sobre él que no hay que inventar
 
