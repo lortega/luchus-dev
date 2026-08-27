@@ -3,14 +3,21 @@
 Cómo escribe Luis. Este archivo existe para que cualquiera —persona o modelo—
 pueda redactar un borrador que suene a él y no a prosa de blog genérica.
 
-> **Estado: provisional.** Está construido con muestras escasas. Ver
-> "Cómo alimentar esto" al final.
+> **Estado: confirmado para inglés técnico, provisional para ensayo.** Los ADR de
+> `captalog-app` confirmaron el registro; su voz de ensayo en inglés sigue sin
+> muestra. Ver "Cómo alimentar esto" al final.
 
 ## Fuentes
 
 **Válidas** (escritas por él):
 - Mensajes de conversación — ver `ejemplos/`.
 - Mensajes de commit anteriores a `ad513a5` (junio 2024, en inglés).
+- Los ADR de `captalog-app` que él firma —`docs/adr/008` y `docs/adr/014`— en
+  inglés técnico. **Ese repo es privado y este es público: no copiar su contenido
+  acá.** Se leen allá; acá solo quedan las observaciones.
+
+**Ojo con la autoría**: en `captalog-app` también escribe Garri Figueroa (ADR 021
+y 030). Verificar con `git log` antes de tomar un ADR como muestra.
 
 **No válidas**:
 - Las tres entradas en `src/content/bitacora/`. Las agregó el commit `ad513a5`,
@@ -54,6 +61,18 @@ Cada uno con la evidencia que lo respalda. Si un rasgo no tiene evidencia, no es
 8. **En inglés (commits): tercera persona del presente, sin punto final, sin
    prefijos de scope.** "Adds custom domain", "Removes search", "Restores search".
    Directo, sin adjetivos.
+
+9. **En inglés técnico (ADR), rasgos observados en el 014:**
+   - Razona por alternativas pesadas, no por narrativa: contexto → opciones →
+     decisión → costos → consecuencias.
+   - Aterriza el problema en un caso numérico concreto en vez de dejarlo
+     abstracto.
+   - Cita con precisión —capítulos, no nombres sueltos.
+   - Declara el costo de su propia decisión sin suavizarlo, y no vende la
+     solución que eligió.
+   - Oraciones cortas, voz activa, cero adjetivos de venta.
+
+   Esto **confirma** el registro recomendado abajo: la conjetura era correcta.
 
 ## Reglas para escribir en inglés
 
