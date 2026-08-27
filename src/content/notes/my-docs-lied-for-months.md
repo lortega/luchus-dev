@@ -6,7 +6,8 @@ tags: [documentation, ai, process]
 draft: false
 ---
 
-The other day I found a file in our repo that said dev and test ran on SQLite.
+The other day, working through something with an agent, we opened a file in our
+repo that said dev and test ran on SQLite.
 
 They hadn't, for months. The file had been wrong that whole time, sitting in
 `docs/` with everything else, right where you would look for it. Nobody had said
@@ -14,8 +15,11 @@ anything.
 
 I want to be honest about why that happened, because the boring answer is the
 correct one. Nobody said anything because nobody was reading it. I wasn't reading
-it either. I wrote it, and then I went and changed the thing it described, and
-the file stayed where it was, being wrong, for anyone who trusted it.
+it either. I wrote it, and then I went and changed the thing it described, and the
+file stayed where it was, being wrong, for anyone who trusted it.
+
+It took an agent reading it out loud, in the middle of an unrelated task, for
+anyone to notice.
 
 That is how documentation has always failed. Not dramatically. It just drifts, and
 the drift is invisible, because the people who would catch it are the same people
@@ -36,6 +40,16 @@ sentence, believes it, and acts.
 
 So a stale document stopped being debt and became a bug. Not a metaphorical bug. A
 real one, that ships, in a pull request, with your name on it.
+
+I should say where I stand, because it changes how you read the rest. I do not
+build this alone. I work next to agents, every day, most of the day. The decisions
+are mine and I would defend every one of them, but the execution is shared, and
+this documentation system came out of that same way of working — it was not
+handed down to it.
+
+Which is the whole point, really. The docs are not notes I leave for some future
+colleague who may never arrive. They are what I hand to the collaborator I
+actually have, at the start of every session.
 
 I keep coming back to that. I had always treated documentation as a thing you do
 for other people, later, if there is time. It turns out I had been writing an
@@ -91,6 +105,10 @@ the number and I am not going to pretend it is a target. It is what it took.
 It costs discipline, permanently. A new document has to hang off the map and off
 an owner or CI fails, and there are days when that is exactly what you do not want
 to deal with.
+
+It also costs a habit I did not have. Every time we settle something worth
+keeping, it has to be written down right then, in the same pass — not later, not
+when there is time. Later is how the SQLite line survived.
 
 The migration was four phases and touched around thirty links scattered through
 config, agent files and code comments. Paths got longer. Some of the structure I

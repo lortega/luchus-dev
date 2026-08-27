@@ -84,6 +84,21 @@ al elegir inglés, ya no en abstracto.
   que todavía no está resuelto. Él lo hace todo el tiempo.
 - Un post, una cosa. Si hay dos, son dos posts.
 
+## Hechos sobre él que no hay que inventar
+
+- **Trabaja codo a codo con agentes, todos los días.** No es un dev que codea solo
+  y ocasionalmente consulta una IA. Las decisiones son suyas y las defiende; la
+  ejecución es compartida. **Nunca escribirlo como programador solitario** — es
+  falso y, en un post sobre IA, se nota.
+- Por lo mismo, casi nada de lo que produce en `captalog-app` es prosa suya. Ver
+  "Fuentes" arriba.
+- **No inventarle biografía.** Ni años de experiencia, ni cifras de clientes, ni
+  industrias, ni anécdotas. Si un borrador necesita un dato así, preguntárselo. En
+  el primer post se colaron unos "quince años" inventados y hubo que sacarlos ya
+  publicado.
+- CaptaLog tiene más de una persona: Garri Figueroa también trabaja ahí. Luis es
+  el dueño y dice que puede hablar de todo, pero no todo el trabajo es suyo.
+
 ## Cómo alimentar esto
 
 Guardar sus prompts en `ejemplos/`, sin editar, con fecha y contexto. Nada más
