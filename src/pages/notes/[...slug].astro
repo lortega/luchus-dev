@@ -1,0 +1,89 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { readLog, folio, longDate, iso, readingMinutes, type LogEntry } from '../../lib/notes';
+
+export async function getStaticPaths() {
+  const entries = await readLog();
+  return entries.map((entry, i) => ({
+    params: { slug: entry.note.id },
+    props: {
+      entry,
+      newer: entries[i - 1] ?? null,
+      older: entries[i + 1] ?? null,
+    },
+  }));
+}
+
+interface Props {
+  entry: LogEntry;
+  newer: LogEntry | null;
+  older: LogEntry | null;
+}
+
+const { entry, newer, older } = Astro.props;
+const { note } = entry;
+const { Content } = await render(note);
+const minutes = readingMinutes(note.body ?? '');
+---
+
+<Base
+  title={note.data.title}
+  description={note.data.summary}
+  type="article"
+  date={note.data.date}
+>
+  <div class="envoltura">
+    <article class="articulo">
+      <header class="articulo__cabecera">
+        <div class="articulo__meta mono">
+          <span>#{folio(entry.folio)}</span>
+          <span class="sep">/</span>
+          <time datetime={iso(note.data.date)}>{longDate(note.data.date)}</time>
+          <span class="sep">/</span>
+          <span>{minutes} min</span>
+        </div>
+        <h1 class="articulo__titulo">{note.data.title}</h1>
+        <p class="articulo__resumen">{note.data.summary}</p>
+        {
+          note.data.tags.length > 0 && (
+            <ul class="tags">
+              {note.data.tags.map((t) => (
+                <li>{t}</li>
+              ))}
+            </ul>
+          )
+        }
+      </header>
+
+      <hr class="articulo__regla" />
+
+      <div class="prosa">
+        <Content />
+      </div>
+    </article>
+
+    {
+      (newer || older) && (
+        <nav class="vecinas" aria-label="Other notes">
+          {older ? (
+            <a class="vecina vecina--ant" href={`/notes/${older.note.id}/`}>
+              <span class="rotulo">← previous · #{folio(older.folio)}</span>
+              <span class="vecina__titulo">{older.note.data.title}</span>
+            </a>
+          ) : (
+            <span class="vecina" aria-hidden="true" />
+          )}
+          {newer ? (
+            <a class="vecina vecina--sig" href={`/notes/${newer.note.id}/`}>
+              <span class="rotulo">next · #{folio(newer.folio)} →</span>
+              <span class="vecina__titulo">{newer.note.data.title}</span>
+            </a>
+          ) : (
+            <span class="vecina" aria-hidden="true" />
+          )}
+        </nav>
+      )
+    }
+  </div>
+</Base>

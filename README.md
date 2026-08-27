@@ -1,7 +1,8 @@
 # luchus.dev
 
 Bitácora personal de Luis Ortega. Sitio estático hecho con [Astro](https://astro.build),
-publicado en GitHub Pages.
+publicado en GitHub Pages. El sitio y su contenido están en inglés; la documentación
+del repo, en español.
 
 ## Correr en local
 
@@ -14,16 +15,16 @@ npm run preview  # sirve dist/ como en producción
 
 ## Escribir una entrada
 
-Cada entrada es un archivo Markdown en `src/content/bitacora/`. El nombre del
-archivo es la URL: `mi-entrada.md` queda en `/bitacora/mi-entrada/`.
+Cada entrada es un archivo Markdown en `src/content/notes/`. El nombre del
+archivo es la URL: `my-note.md` queda en `/notes/my-note/`.
 
 ```markdown
 ---
-titulo: El log que nadie lee
-resumen: Una línea que aparece en la portada, en el RSS y en la metadata.
-fecha: 2026-06-11
-tags: [producción, errores]
-borrador: false
+title: The log nobody reads
+summary: Una línea que aparece en la portada, en el RSS y en la metadata.
+date: 2026-06-11
+tags: [production, errors]
+draft: false
 ---
 
 El cuerpo de la entrada, en Markdown.
@@ -31,11 +32,11 @@ El cuerpo de la entrada, en Markdown.
 
 | Campo     | Obligatorio | Qué hace                                                        |
 | --------- | ----------- | --------------------------------------------------------------- |
-| `titulo`  | sí          | Título de la entrada.                                            |
-| `resumen` | sí          | Bajada. Se usa en la portada, en el RSS y como `description`.     |
-| `fecha`   | sí          | `AAAA-MM-DD`. Define el orden y el folio.                         |
+| `title`   | sí          | Título de la entrada.                                            |
+| `summary` | sí          | Bajada. Se usa en la portada, en el RSS y como `description`.     |
+| `date`    | sí          | `AAAA-MM-DD`. Define el orden y el folio.                         |
 | `tags`    | no          | Lista de etiquetas. Por defecto, vacía.                           |
-| `borrador`| no          | `true` la deja fuera del build de producción, visible en `dev`.   |
+| `draft`   | no          | `true` la deja fuera del build de producción, visible en `dev`.   |
 
 También se acepta `.mdx` si necesitás componentes dentro de una entrada.
 
@@ -46,8 +47,9 @@ orden cronológico ascendente: la entrada más antigua es la `#001`. Si insertá
 entrada con fecha anterior, los folios posteriores se corren. Es un registro, no
 un identificador permanente.
 
-Las tres entradas que vienen en el repo son contenido de partida: reemplazalas o
-borralas.
+Las tres entradas que vienen en el repo son contenido de partida —no las escribió
+Luis— y están marcadas `draft: true`, así que no salen en producción. Reemplazarlas
+o borrarlas.
 
 ## Diseño
 
@@ -56,18 +58,20 @@ borralas.
   API de fuentes de Astro; no hay pedidos a Google en producción.
 - **Paleta**: papel con tinte salvia y tinta oxblood, definida como variables CSS
   en `src/styles/global.css`. El modo oscuro sigue la preferencia del sistema.
+- Los nombres de clases CSS siguen en español (`envoltura`, `entrada`, `cabecera`).
+  Son internos y renombrarlos no le sirve a ningún lector.
 - El riel vertical de la portada es continuo y solo lo interrumpen los años.
 
 ## Estructura
 
 ```
 src/
-  content/bitacora/   entradas en Markdown
+  content/notes/      entradas en Markdown
   content.config.ts   esquema del frontmatter
   components/         cabecera, pie, <head>
   layouts/Base.astro  cascarón HTML
-  lib/bitacora.ts     lectura del registro, folios, fechas
-  pages/              portada, entrada, sobre-mí, 404, rss.xml
+  lib/notes.ts        lectura del registro, folios, fechas
+  pages/              portada, entrada, about, 404, rss.xml
   styles/global.css   todo el diseño
 public/               favicon, CNAME, robots.txt
 ```

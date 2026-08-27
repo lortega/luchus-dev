@@ -1,8 +1,9 @@
 ---
-titulo: Abrir la bitácora de nuevo
-resumen: Por qué vuelvo a escribir en un sitio propio, y qué pienso anotar acá.
-fecha: 2026-08-24
+title: Abrir la bitácora de nuevo
+summary: Por qué vuelvo a escribir en un sitio propio, y qué pienso anotar acá.
+date: 2026-08-24
 tags: [bitácora, escribir]
+draft: true
 ---
 
 Este dominio llevaba meses sirviendo documentación de un producto. Hoy lo vacié

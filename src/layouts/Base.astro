@@ -4,20 +4,20 @@ import Cabecera from '../components/Cabecera.astro';
 import Pie from '../components/Pie.astro';
 
 interface Props {
-  titulo: string;
-  descripcion: string;
-  tipo?: 'website' | 'article';
-  fecha?: Date;
+  title: string;
+  description: string;
+  type?: 'website' | 'article';
+  date?: Date;
 }
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <BaseHead {...Astro.props} />
   </head>
   <body>
-    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <a class="saltar" href="#contenido">Skip to content</a>
     <Cabecera />
     <main id="contenido">
       <slot />

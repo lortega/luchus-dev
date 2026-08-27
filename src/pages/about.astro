@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../consts';
+---
+
+<Base title="About" description={`Who ${SITE.author} is, and what these notes are about.`}>
+  <div class="envoltura">
+    <div class="pagina">
+      <h1 class="pagina__titulo">About</h1>
+      <div class="prosa">
+        <p>
+          I'm <strong>{SITE.author}</strong>, a software developer. I build field inspection
+          software: checklists, findings and evidence captured by people walking a site, usually
+          with no signal, on whatever phone they were handed.
+        </p>
+        <p>
+          Almost everything I read about building software assumes the opposite conditions — a
+          stable network, a laptop, a user who chose to be there. These notes are what I learn
+          building for the other case: offline sync, conflict resolution, evidence that cannot be
+          lost, and the mistakes that turn out to be expensive.
+        </p>
+        <p>
+          I write in English because the conversation I want to be part of happens in English.
+          The work happens in Chile.
+        </p>
+        <h2>Elsewhere</h2>
+        <ul>
+          <li><a href="https://github.com/lortega" rel="me">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Base>

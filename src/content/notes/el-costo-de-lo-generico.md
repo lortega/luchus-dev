@@ -1,8 +1,9 @@
 ---
-titulo: El costo de lo genérico
-resumen: Toda abstracción escrita antes del tercer caso cobra intereses. Casi siempre conviene esperar.
-fecha: 2025-11-30
+title: El costo de lo genérico
+summary: Toda abstracción escrita antes del tercer caso cobra intereses. Casi siempre conviene esperar.
+date: 2025-11-30
 tags: [diseño, dominio]
+draft: true
 ---
 
 Cuando aparece el segundo caso parecido, la tentación es inmediata: extraer la

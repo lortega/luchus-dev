@@ -1,22 +1,22 @@
 import rss from '@astrojs/rss';
 import type { APIContext } from 'astro';
-import { SITIO } from '../consts';
-import { leerRegistro } from '../lib/bitacora';
+import { SITE } from '../consts';
+import { readLog } from '../lib/notes';
 
 export async function GET(context: APIContext) {
-  const registros = await leerRegistro();
+  const entries = await readLog();
 
   return rss({
-    title: `${SITIO.titulo} · bitácora`,
-    description: SITIO.descripcion,
+    title: `${SITE.title} · notes`,
+    description: SITE.description,
     site: context.site!,
-    customData: `<language>es-cl</language>`,
-    items: registros.map(({ entrada }) => ({
-      title: entrada.data.titulo,
-      description: entrada.data.resumen,
-      pubDate: entrada.data.fecha,
-      categories: entrada.data.tags,
-      link: `/bitacora/${entrada.id}/`,
+    customData: `<language>en</language>`,
+    items: entries.map(({ note }) => ({
+      title: note.data.title,
+      description: note.data.summary,
+      pubDate: note.data.date,
+      categories: note.data.tags,
+      link: `/notes/${note.id}/`,
     })),
   });
 }

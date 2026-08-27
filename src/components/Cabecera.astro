@@ -1,18 +1,18 @@
 ---
-import { SITIO } from '../consts';
+import { SITE } from '../consts';
 
-const ruta = Astro.url.pathname;
-const activa = (href: string) => (ruta === href ? 'page' : undefined);
+const path = Astro.url.pathname;
+const current = (href: string) => (path === href ? 'page' : undefined);
 ---
 
 <header class="cabecera">
   <div class="envoltura cabecera__fila">
     <a class="marca" href="/">
-      {SITIO.titulo.replace('.dev', '')}<span class="marca__punto">.dev</span>
+      {SITE.title.replace('.dev', '')}<span class="marca__punto">.dev</span>
     </a>
-    <nav class="nav" aria-label="Principal">
-      <a href="/" aria-current={activa('/')}>bitácora</a>
-      <a href="/sobre-mi/" aria-current={activa('/sobre-mi/')}>sobre mí</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/" aria-current={current('/')}>notes</a>
+      <a href="/about/" aria-current={current('/about/')}>about</a>
       <a href="/rss.xml">rss</a>
     </nav>
   </div>

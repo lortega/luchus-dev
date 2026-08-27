@@ -1,8 +1,9 @@
 ---
-titulo: El log que nadie lee
-resumen: Registrar un error y seguir adelante no es manejarlo. Es esconderlo con mejor letra.
-fecha: 2026-06-11
+title: El log que nadie lee
+summary: Registrar un error y seguir adelante no es manejarlo. Es esconderlo con mejor letra.
+date: 2026-06-11
 tags: [producción, errores, ruby]
+draft: true
 ---
 
 Hay un patrón que aparece en todos los código base que he tocado, y que casi
