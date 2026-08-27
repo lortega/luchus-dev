@@ -17,7 +17,17 @@ npm run preview  # sirve dist/ como en producción
 npm run check    # astro check (types)
 ```
 
-No hay tests ni linter. `npm run check` es la única verificación antes de un push.
+No hay tests ni linter. `npm run check` es la única verificación antes de un push,
+y la corre sola el hook `.githooks/pre-push`. Si el repo se clona de nuevo hay que
+reactivarlo una vez:
+
+```bash
+git config core.hooksPath .githooks
+npm install
+```
+
+Sin `node_modules` el hook avisa y deja pasar el push. Para saltarlo a propósito,
+`git push --no-verify`.
 
 ## Entradas
 
@@ -138,4 +148,11 @@ La excepción sigue siendo el contenido: **borradores de entradas no se publican
 sin que Luis los revise.** Si hace falta subir uno para no perderlo, va con
 `borrador: true`, que lo deja fuera del build de producción.
 
-Recordar que cada push a `master` despliega el sitio.
+Recordar que cada push a `master` despliega el sitio. El hook `pre-push` corre
+`astro check` y aborta si falla — importa porque `astro build` no hace typecheck.
+
+**Pendiente**: la rama `workflow-check-gate` tiene el mismo control como job de CI
+en `.github/workflows/deploy.yml`. No se pudo pushear porque el token OAuth de la
+sesión no tiene el scope `workflow`. Cuando Luis corra
+`gh auth refresh -h github.com -s workflow`, hay que mergearla a `master` y
+borrarla. Hasta entonces el hook local es la única puerta.

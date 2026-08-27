@@ -8,10 +8,16 @@ del repo, en español.
 
 ```bash
 npm install
+git config core.hooksPath .githooks   # una sola vez, activa el hook de pre-push
 npm run dev      # http://localhost:4321
 npm run build    # genera dist/
 npm run preview  # sirve dist/ como en producción
+npm run check    # astro check
 ```
+
+El hook `.githooks/pre-push` corre `astro check` antes de cada push y lo aborta si
+falla. Cada push a `master` despliega, y `astro build` no hace typecheck, así que
+sin esto un error de tipos llega a producción.
 
 ## Escribir una entrada
 
