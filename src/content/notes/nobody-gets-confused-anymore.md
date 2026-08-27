@@ -3,7 +3,7 @@ title: Nobody gets confused anymore
 summary: A confused person asks a question. An agent fills the gap and keeps going. We lost the only test our documentation ever had.
 date: 2026-08-27
 tags: [documentation, ai, process]
-draft: true
+draft: false
 ---
 
 We stopped getting questions.
