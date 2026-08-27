@@ -3,14 +3,14 @@ title: My docs lied for months and nobody noticed
 summary: A file said we ran SQLite in dev. We hadn't in a long time. Nobody caught it, because nobody was reading — until something started reading everything.
 date: 2026-08-27
 tags: [documentation, ai, process]
-draft: true
+draft: false
 ---
 
 The other day I found a file in our repo that said dev and test ran on SQLite.
 
 They hadn't, for months. The file had been wrong that whole time, sitting in
-`docs/`, linked from the README, right where you would look for it. Nobody had
-said anything.
+`docs/` with everything else, right where you would look for it. Nobody had said
+anything.
 
 I want to be honest about why that happened, because the boring answer is the
 correct one. Nobody said anything because nobody was reading it. I wasn't reading
@@ -37,8 +37,8 @@ sentence, believes it, and acts.
 So a stale document stopped being debt and became a bug. Not a metaphorical bug. A
 real one, that ships, in a pull request, with your name on it.
 
-I keep coming back to that. For fifteen years I treated documentation as a thing
-you do for other people, later, if there is time. It turns out I was writing an
+I keep coming back to that. I had always treated documentation as a thing you do
+for other people, later, if there is time. It turns out I had been writing an
 input to a machine and did not know it.
 
 ## What I did about it
