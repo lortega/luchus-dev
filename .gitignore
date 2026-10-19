@@ -1,0 +1,24 @@
+# dependencias
+node_modules/
+
+# salida de build
+dist/
+.astro/
+
+# entorno
+.env
+.env.production
+
+# editores
+.vscode/
+.idea/
+*~
+
+# macOS
+.DS_Store
+
+# instrucciones locales para Claude: no se publican
+CLAUDE.md
+docs/voz.md
+docs/ejemplos/
+docs/asesores.md

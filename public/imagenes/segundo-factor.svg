@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" role="img" aria-labelledby="t">
+  <title id="t">Antes, solo con una clave: un atacante que tiene tu clave abre tu caja fuerte. Después, con la clave y algo que tienes: tú entras con tu clave y tu celular; el atacante tiene tu clave pero no tu celular, y no entra.</title>
+  <style>
+    .fondo { fill: #eff2ec; }
+    .caja { fill: #fbfcfa; stroke: #171c19; stroke-width: 1.5; }
+    .atacante { fill: #f3dfe1; stroke: #8c2f39; stroke-width: 2; }
+    .regla { stroke: #cfd6ca; stroke-width: 1.5; }
+    .linea { fill: none; stroke: #171c19; stroke-width: 1.5; }
+    .cortada { fill: none; stroke: #8c2f39; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .punta { fill: #171c19; }
+    text { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; fill: #171c19; text-anchor: middle; }
+    .t { font-size: 16px; }
+    .titulo { font-size: 16px; text-anchor: start; }
+    .p { font-size: 12.5px; fill: #5e6760; }
+    .rotulo { font-size: 12px; fill: #8c2f39; letter-spacing: 0.08em; text-anchor: start; }
+    .resultado { font-size: 15px; text-anchor: start; }
+    .aviso { fill: #8c2f39; }
+    .cruz { font-size: 20px; fill: #8c2f39; }
+    @media (prefers-color-scheme: dark) {
+      .fondo { fill: #141815; }
+      .caja { fill: #141815; stroke: #e3e7df; }
+      .atacante { fill: #3a2226; stroke: #d07079; }
+      .regla { stroke: #2c332e; }
+      .linea { stroke: #e3e7df; }
+      .cortada { stroke: #d07079; }
+      .punta { fill: #e3e7df; }
+      text { fill: #e3e7df; }
+      .p { fill: #838c84; }
+      .rotulo, .aviso, .cruz { fill: #d07079; }
+    }
+  </style>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="punta" d="M0 0 L10 5 L0 10 z" />
+    </marker>
+  </defs>
+
+  <rect class="fondo" width="520" height="380" />
+
+  <!-- Antes: solo una clave -->
+  <text class="rotulo" x="16" y="24">ANTES</text>
+  <text class="titulo" x="16" y="46">Solo una clave</text>
+
+  <rect class="atacante" x="16" y="64" width="190" height="64" rx="4" />
+  <text class="t" x="111" y="91">Un atacante</text>
+  <text class="p" x="111" y="111">con tu clave</text>
+  <path class="linea" d="M206 96 H256" marker-end="url(#flecha)" />
+  <rect class="caja" x="258" y="64" width="150" height="64" rx="4" />
+  <text class="t" x="333" y="91">Tu caja</text>
+  <text class="p" x="333" y="111">fuerte</text>
+  <text class="resultado aviso" x="422" y="101">Entra.</text>
+
+  <line class="regla" x1="16" y1="152" x2="504" y2="152" />
+
+  <!-- Después: la clave y algo que tienes -->
+  <text class="rotulo" x="16" y="182">DESPUÉS</text>
+  <text class="titulo" x="16" y="204">La clave y algo que tienes</text>
+
+  <rect class="caja" x="16" y="222" width="190" height="64" rx="4" />
+  <text class="t" x="111" y="249">Tú</text>
+  <text class="p" x="111" y="269">tu clave y tu celular</text>
+  <path class="linea" d="M206 254 H256" marker-end="url(#flecha)" />
+  <rect class="caja" x="258" y="222" width="150" height="64" rx="4" />
+  <text class="t" x="333" y="249">Tu caja</text>
+  <text class="p" x="333" y="269">fuerte</text>
+  <text class="resultado" x="422" y="259">Entras.</text>
+
+  <rect class="atacante" x="16" y="300" width="190" height="64" rx="4" />
+  <text class="t" x="111" y="324">Un atacante</text>
+  <text class="p" x="111" y="342">con tu clave,</text>
+  <text class="p" x="111" y="357">sin tu celular</text>
+  <path class="cortada" d="M206 332 H256" />
+  <text class="cruz" x="231" y="339">✕</text>
+  <rect class="caja" x="258" y="300" width="150" height="64" rx="4" />
+  <text class="t" x="333" y="327">Tu caja</text>
+  <text class="p" x="333" y="347">fuerte</text>
+  <text class="resultado aviso" x="422" y="337">No entra.</text>
+</svg>

@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../consts';
+import { readLog, folio, shortDate, iso, year, type LogEntry } from '../lib/notes';
+
+type Row = { kind: 'year'; year: number } | ({ kind: 'note' } & LogEntry);
+
+const entries = await readLog();
+
+const rows: Row[] = [];
+let lastYear: number | null = null;
+for (const entry of entries) {
+  const y = year(entry.note.data.date);
+  if (y !== lastYear) {
+    rows.push({ kind: 'year', year: y });
+    lastYear = y;
+  }
+  rows.push({ kind: 'note', ...entry });
+}
+---
+
+<Base title={SITE.title} description={SITE.description}>
+  <div class="envoltura">
+    <section class="portada">
+      <h1 class="portada__tesis">
+        Antes de seguir, <em>define bien</em> tu problema.
+      </h1>
+      <p class="portada__nota">
+        Soy {SITE.author}. Escribo sobre seguridad y FinOps. Si no sabes contra qué te enfrentas,
+        no lo vas a poder resolver. Y casi siempre se empieza por leer lo que de verdad dice la
+        pantalla.
+      </p>
+    </section>
+
+    <p class="tesis-nota">el registro, lo más nuevo primero</p>
+
+    {
+      rows.length === 0 ? (
+        <p class="vacio">
+          Todavía no hay nada acá. La primera nota va en <code>src/content/notes/</code>.
+        </p>
+      ) : (
+        <div class="registro">
+          {rows.map((row, i) =>
+            row.kind === 'year' ? (
+              <h2 class="registro__anio" style={`--i:${i}`}>
+                <span>{row.year}</span>
+              </h2>
+            ) : (
+              <article class="entrada" style={`--i:${i}`}>
+                <div class="entrada__folio">{folio(row.folio)}</div>
+                <div class="entrada__riel" aria-hidden="true" />
+                <div class="entrada__cuerpo">
+                  <div class="entrada__meta">
+                    <time class="mono entrada__fecha" datetime={iso(row.note.data.date)}>
+                      {shortDate(row.note.data.date)}
+                    </time>
+                    {row.note.data.tags.length > 0 && (
+                      <ul class="tags">
+                        {row.note.data.tags.map((t) => (
+                          <li>{t}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  <h3 class="entrada__titulo">
+                    <a class="entrada__enlace" href={`/notas/${row.note.id}/`}>
+                      {row.note.data.title}
+                    </a>
+                  </h3>
+                  <p class="entrada__resumen">{row.note.data.summary}</p>
+                </div>
+              </article>
+            ),
+          )}
+        </div>
+      )
+    }
+  </div>
+</Base>

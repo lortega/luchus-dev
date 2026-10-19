@@ -1,0 +1,91 @@
+# luchus.dev
+
+Bitácora personal de Luis Ortega. Sitio estático hecho con [Astro](https://astro.build),
+publicado en GitHub Pages. El sitio, su contenido y la documentación del
+repo están en español.
+
+## Correr en local
+
+```bash
+npm install
+git config core.hooksPath .githooks   # una sola vez, activa el hook de pre-push
+npm run dev      # http://localhost:4321
+npm run build    # genera dist/
+npm run preview  # sirve dist/ como en producción
+npm run check    # astro check
+```
+
+El hook `.githooks/pre-push` corre `astro check` antes de cada push y lo aborta si
+falla. Cada push a `master` despliega, y `astro build` no hace typecheck, así que
+sin esto un error de tipos llega a producción.
+
+## Escribir una entrada
+
+Cada entrada es un archivo Markdown en `src/content/notes/`. El nombre del
+archivo es la URL: `my-note.md` queda en `/notes/my-note/`.
+
+```markdown
+---
+title: The log nobody reads
+summary: Una línea que aparece en la portada, en el RSS y en la metadata.
+date: 2026-06-11
+tags: [production, errors]
+draft: false
+---
+
+El cuerpo de la entrada, en Markdown.
+```
+
+| Campo     | Obligatorio | Qué hace                                                        |
+| --------- | ----------- | --------------------------------------------------------------- |
+| `title`   | sí          | Título de la entrada.                                            |
+| `summary` | sí          | Bajada. Se usa en la portada, en el RSS y como `description`.     |
+| `date`    | sí          | `AAAA-MM-DD`. Define el orden y el folio.                         |
+| `tags`    | no          | Lista de etiquetas. Por defecto, vacía.                           |
+| `draft`   | no          | `true` la deja fuera del build de producción, visible en `dev`.   |
+
+También se acepta `.mdx` si necesitás componentes dentro de una entrada.
+
+### Folios
+
+El número que aparece junto a cada entrada (`#001`, `#002`…) se calcula solo, por
+orden cronológico ascendente: la entrada más antigua es la `#001`. Si insertás una
+entrada con fecha anterior, los folios posteriores se corren. Es un registro, no
+un identificador permanente.
+
+## Diseño
+
+- **Tipografías**: Bricolage Grotesque (títulos), Literata (lectura), IBM Plex Mono
+  (fechas, folios, código). Se descargan y se sirven desde el propio sitio con la
+  API de fuentes de Astro; no hay pedidos a Google en producción.
+- **Paleta**: papel con tinte salvia y tinta oxblood, definida como variables CSS
+  en `src/styles/global.css`. El modo oscuro sigue la preferencia del sistema.
+- Los nombres de clases CSS siguen en español (`envoltura`, `entrada`, `cabecera`).
+  Son internos y renombrarlos no le sirve a ningún lector.
+- El riel vertical de la portada es continuo y solo lo interrumpen los años.
+
+## Estructura
+
+```
+src/
+  content/notes/      entradas en Markdown
+  content.config.ts   esquema del frontmatter
+  components/         cabecera, pie, <head>
+  layouts/Base.astro  cascarón HTML
+  lib/notes.ts        lectura del registro, folios, fechas
+  pages/              portada, entrada, sobre-mi, 404, rss.xml
+  styles/global.css   todo el diseño
+public/               favicon, CNAME, robots.txt
+```
+
+## Despliegue
+
+`.github/workflows/deploy.yml` buildea y publica en cada push a `master`.
+
+Para que funcione hace falta, una sola vez, en el repo de GitHub:
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. **Settings → Pages → Custom domain**: `luchus.dev` (el archivo `public/CNAME`
+   ya viaja en el build).
+3. En el DNS de `luchus.dev`, apuntar el apex a GitHub Pages:
+   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.

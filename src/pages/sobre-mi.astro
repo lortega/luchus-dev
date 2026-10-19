@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../consts';
+---
+
+<Base title="Sobre mí" description={`Quién es ${SITE.author} y de qué tratan estas notas.`}>
+  <div class="envoltura">
+    <div class="pagina">
+      <h1 class="pagina__titulo">Sobre mí</h1>
+      <div class="prosa">
+        <p>Soy <strong>{SITE.author}</strong>, Luchus.</p>
+        <p>Hago dos cosas.</p>
+        <p>
+          <a href="https://captalog.com">CaptaLog</a> es captura de datos en terreno. Las
+          herramientas que hay son gringas: en inglés y poco flexibles. CaptaLog está hecho para
+          LATAM, en español, y junta la captura con el flujo de trabajo que viene después:
+          van de la mano, y ninguna otra plataforma las trae juntas.
+        </p>
+        <p>
+          <a href="https://plumii.io">Plumii</a> es un chat de IA para empresas. Los datos
+          sensibles hoy se escapan por el chat de IA de cualquier proveedor. Bloquéalos todos, deja
+          solo Plumii, y desde ahí decides qué datos salen y cuáles no.
+        </p>
+        <p>
+          Antes llevé la tecnología de <a href="https://www.valopes.com">Valopes</a>: digitalizar
+          la gestión de residuos, un problema que importa y que casi nadie se ha puesto a resolver.
+          Armé todo el stack sobre Ruby on Rails, desde la seguridad hasta el data warehouse.
+        </p>
+        <p>
+          Lo que me gusta es prevenir riesgos. Los de seguridad y los de plata, sobre todo la que
+          se va en la nube sin que nadie mire. De eso escribo acá.
+        </p>
+
+        <h2>En otros lados</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/luis-ortega-araneda/" rel="me">LinkedIn</a></li>
+          <li><a href="https://github.com/lortega" rel="me">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,19 @@
+---
+import { SITE } from '../consts';
+
+const path = Astro.url.pathname;
+const current = (href: string) => (path === href ? 'page' : undefined);
+---
+
+<header class="cabecera">
+  <div class="envoltura cabecera__fila">
+    <a class="marca" href="/">
+      {SITE.title.replace('.dev', '')}<span class="marca__punto">.dev</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="/" aria-current={current('/')}>notas</a>
+      <a href="/sobre-mi/" aria-current={current('/sobre-mi/')}>sobre mí</a>
+      <a href="/rss.xml">rss</a>
+    </nav>
+  </div>
+</header>

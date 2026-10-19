@@ -1,0 +1,68 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Cabecera from '../components/Cabecera.astro';
+import Pie from '../components/Pie.astro';
+import { SITE } from '../consts';
+
+interface Props {
+  title: string;
+  description: string;
+  type?: 'website' | 'article';
+  date?: Date;
+  image?: string;
+}
+---
+
+<!doctype html>
+<html lang={SITE.language}>
+  <head>
+    <BaseHead {...Astro.props} />
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <Cabecera />
+    <main id="contenido">
+      <slot />
+    </main>
+    <Pie />
+    <script>
+      // Notas al margen en pantallas táctiles. Si la nota tiene un texto propio que
+      // la abre (.nota__gatillo), basta tocarlo. Si cuelga de un link, tocarlo
+      // navega, así que se agrega un botón "?". Con mouse, el CSS la muestra solo.
+      const notas = document.querySelectorAll<HTMLElement>('.prosa .nota');
+
+      for (const nota of notas) {
+        let gatillo = nota.querySelector<HTMLElement>('.nota__gatillo');
+
+        if (gatillo) {
+          gatillo.setAttribute('role', 'button');
+          gatillo.tabIndex = 0;
+        } else {
+          gatillo = document.createElement('button');
+          gatillo.setAttribute('type', 'button');
+          gatillo.className = 'nota__boton';
+          gatillo.textContent = '?';
+          gatillo.setAttribute('aria-label', 'Más información');
+          nota.insertBefore(gatillo, nota.querySelector('.nota__texto'));
+        }
+
+        gatillo.setAttribute('aria-expanded', 'false');
+        gatillo.addEventListener('click', () => {
+          const abierta = nota.classList.toggle('abierta');
+          gatillo.setAttribute('aria-expanded', String(abierta));
+        });
+      }
+
+      document.addEventListener('click', (evento) => {
+        for (const nota of notas) {
+          if (!nota.contains(evento.target as Node)) {
+            nota.classList.remove('abierta');
+            nota
+              .querySelector('.nota__gatillo, .nota__boton')
+              ?.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

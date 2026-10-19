@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 510" role="img" aria-labelledby="t">
+  <title id="t">Antes: la misma clave en la tienda, el correo, el banco e Instagram; se filtra la tienda y entran a todo. Después: una sola clave abre una caja fuerte, el gestor, que guarda una clave distinta para cada cuenta; se filtra la tienda y entran solo a la tienda.</title>
+  <style>
+    .fondo { fill: #eff2ec; }
+    .caja { fill: #fbfcfa; stroke: #171c19; stroke-width: 1.5; }
+    .filtrada { fill: #f3dfe1; stroke: #8c2f39; stroke-width: 2; }
+    .regla { stroke: #cfd6ca; stroke-width: 1.5; }
+    .linea { fill: none; stroke: #171c19; stroke-width: 1.5; }
+    .punta { fill: #171c19; }
+    text { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; fill: #171c19; text-anchor: middle; }
+    .t { font-size: 16px; }
+    .titulo { font-size: 16px; text-anchor: start; }
+    .p { font-size: 12.5px; fill: #5e6760; }
+    .rotulo { font-size: 12px; fill: #8c2f39; letter-spacing: 0.08em; text-anchor: start; }
+    .aviso { font-size: 13px; fill: #8c2f39; }
+    @media (prefers-color-scheme: dark) {
+      .fondo { fill: #141815; }
+      .caja { fill: #141815; stroke: #e3e7df; }
+      .filtrada { fill: #3a2226; stroke: #d07079; }
+      .regla { stroke: #2c332e; }
+      .linea { stroke: #e3e7df; }
+      .punta { fill: #e3e7df; }
+      text { fill: #e3e7df; }
+      .p { fill: #838c84; }
+      .rotulo, .aviso { fill: #d07079; }
+    }
+  </style>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="punta" d="M0 0 L10 5 L0 10 z" />
+    </marker>
+  </defs>
+
+  <rect class="fondo" width="520" height="510" />
+
+  <!-- Antes: la misma clave en todo -->
+  <text class="rotulo" x="16" y="24">ANTES</text>
+  <text class="titulo" x="16" y="46">La misma clave en todo</text>
+
+  <rect class="filtrada" x="16" y="64" width="114.5" height="60" rx="4" />
+  <text class="t" x="73.25" y="89">Tienda</text>
+  <text class="p" x="73.25" y="110">Perrito2024</text>
+  <rect class="filtrada" x="140.5" y="64" width="114.5" height="60" rx="4" />
+  <text class="t" x="197.75" y="89">Correo</text>
+  <text class="p" x="197.75" y="110">Perrito2024</text>
+  <rect class="filtrada" x="265" y="64" width="114.5" height="60" rx="4" />
+  <text class="t" x="322.25" y="89">Banco</text>
+  <text class="p" x="322.25" y="110">Perrito2024</text>
+  <rect class="filtrada" x="389.5" y="64" width="114.5" height="60" rx="4" />
+  <text class="t" x="446.75" y="89">Instagram</text>
+  <text class="p" x="446.75" y="110">Perrito2024</text>
+
+  <text class="aviso" x="260" y="150">Se filtra la tienda y entran a todo.</text>
+
+  <line class="regla" x1="16" y1="176" x2="504" y2="176" />
+
+  <!-- Después: una clave y una caja fuerte -->
+  <text class="rotulo" x="16" y="206">DESPUÉS</text>
+  <text class="titulo" x="16" y="228">Una sola clave y una caja fuerte</text>
+
+  <rect class="caja" x="175" y="244" width="170" height="40" rx="4" />
+  <text class="t" x="260" y="269">Tu única clave</text>
+  <path class="linea" d="M260 284 V310" marker-end="url(#flecha)" />
+
+  <rect class="caja" x="145" y="312" width="230" height="52" rx="4" />
+  <text class="t" x="260" y="334">Caja fuerte</text>
+  <text class="p" x="260" y="353">tu gestor de claves</text>
+
+  <path class="linea" d="M220 364 C220 385, 73.25 385, 73.25 404" marker-end="url(#flecha)" />
+  <path class="linea" d="M245 364 C245 385, 197.75 385, 197.75 404" marker-end="url(#flecha)" />
+  <path class="linea" d="M275 364 C275 385, 322.25 385, 322.25 404" marker-end="url(#flecha)" />
+  <path class="linea" d="M300 364 C300 385, 446.75 385, 446.75 404" marker-end="url(#flecha)" />
+
+  <rect class="filtrada" x="16" y="406" width="114.5" height="60" rx="4" />
+  <text class="t" x="73.25" y="431">Tienda</text>
+  <text class="p" x="73.25" y="452">k8#Lq2v</text>
+  <rect class="caja" x="140.5" y="406" width="114.5" height="60" rx="4" />
+  <text class="t" x="197.75" y="431">Correo</text>
+  <text class="p" x="197.75" y="452">Zp2!wTm</text>
+  <rect class="caja" x="265" y="406" width="114.5" height="60" rx="4" />
+  <text class="t" x="322.25" y="431">Banco</text>
+  <text class="p" x="322.25" y="452">9xR$mEa</text>
+  <rect class="caja" x="389.5" y="406" width="114.5" height="60" rx="4" />
+  <text class="t" x="446.75" y="431">Instagram</text>
+  <text class="p" x="446.75" y="452">Mv7&amp;cJd</text>
+
+  <text class="aviso" x="260" y="492">Se filtra la tienda y entran solo a la tienda.</text>
+</svg>

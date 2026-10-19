@@ -1,0 +1,13 @@
+---
+import { SITE } from '../consts';
+const year = new Date().getUTCFullYear();
+---
+
+<footer class="pie">
+  <div class="envoltura pie__fila">
+    <span>© {year} {SITE.author}</span>
+    <span>
+      <a href="/rss.xml">RSS</a> · <a href="https://www.linkedin.com/in/luis-ortega-araneda/" rel="me">LinkedIn</a> · <a href="https://github.com/lortega" rel="me">GitHub</a>
+    </span>
+  </div>
+</footer>
