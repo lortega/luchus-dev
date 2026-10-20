@@ -29,7 +29,7 @@ interface Props {
       // Notas al margen en pantallas táctiles. Si la nota tiene un texto propio que
       // la abre (.nota__gatillo), basta tocarlo. Si cuelga de un link, tocarlo
       // navega, así que se agrega un botón "?". Con mouse, el CSS la muestra solo.
-      const notas = document.querySelectorAll<HTMLElement>('.prosa .nota');
+      const notas = document.querySelectorAll<HTMLElement>(':is(.prosa, .portada) .nota');
 
       for (const nota of notas) {
         let gatillo = nota.querySelector<HTMLElement>('.nota__gatillo');

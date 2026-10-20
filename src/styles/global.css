@@ -492,18 +492,18 @@ video {
 /* Nota al margen: una aclaración que no es parte del argumento, colgada de un link.
    Con mouse aparece al pasar por encima del link. En el celular, tocar el link
    navega, así que Base.astro agrega un botón "?" al lado que abre la nota. */
-.prosa .nota {
+:is(.prosa, .portada) .nota {
   position: relative;
 }
 
 /* Cuando la nota no cuelga de un link, el texto que la abre va punteado. */
-.prosa .nota__gatillo {
+:is(.prosa, .portada) .nota__gatillo {
   text-decoration: underline dotted;
   text-underline-offset: 0.2em;
   cursor: help;
 }
 
-.prosa .nota__texto {
+:is(.prosa, .portada) .nota__texto {
   display: none;
   margin-block: 0.5em;
   padding: 0.75em 1em;
@@ -516,21 +516,21 @@ video {
   cursor: auto;
 }
 
-.prosa .nota.abierta .nota__texto {
+:is(.prosa, .portada) .nota.abierta .nota__texto {
   display: block;
 }
 
-.prosa .nota__boton {
+:is(.prosa, .portada) .nota__boton {
   display: none;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .prosa .nota:hover .nota__texto,
-  .prosa .nota:focus-within .nota__texto {
+  :is(.prosa, .portada) .nota:hover .nota__texto,
+  :is(.prosa, .portada) .nota:focus-within .nota__texto {
     display: block;
   }
 
-  .prosa .nota__texto {
+  :is(.prosa, .portada) .nota__texto {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -541,7 +541,7 @@ video {
   }
 
   /* Puente invisible para que el mouse no pierda la nota al bajar hacia ella. */
-  .prosa .nota__texto::before {
+  :is(.prosa, .portada) .nota__texto::before {
     content: '';
     position: absolute;
     inset: -0.75em 0 auto;
@@ -550,7 +550,7 @@ video {
 }
 
 @media (hover: none) {
-  .prosa .nota__boton {
+  :is(.prosa, .portada) .nota__boton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
