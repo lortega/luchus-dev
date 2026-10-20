@@ -10,9 +10,7 @@ Te dicen que uses una clave larga, segura, con caracteres y cosas en cada cuenta
 Es buen consejo pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
 sitios? Piensa en cuántos números de teléfono te sabes de memoria: el tuyo, y
 ojalá, el de tu mamá. Antes te sabías los de tus amigos porque estabas marcándolos
-seguido... Una clave buena es igual que un número de teléfono porque no tiene
-lógica y la mayoría los usas una vez al mes. Está difícil, y no sé si se puede con
-cuarenta.
+seguido...
 
 Bueno, repetirlas es justo lo que un atacante está esperando. Si compraste en una
 tienda y esa tienda sufre una filtración, tu correo y tu clave van a terminar
