@@ -9,8 +9,7 @@ draft: false
 Te dicen que uses una clave larga, segura, con caracteres y cosas en cada cuenta.
 Es buen consejo pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
 sitios? Piensa en cuántos números de teléfono te sabes de memoria: el tuyo, y
-ojalá, el de tu mamá. Antes te sabías los de tus amigos porque estabas marcándolos
-seguido.
+ojalá, el de tu mamá.
 
 Una solución que se te puede ocurrir es que ocupemos la misma clave en todos lados
 pero eso es justo lo que un atacante está esperando. Si compraste en una
