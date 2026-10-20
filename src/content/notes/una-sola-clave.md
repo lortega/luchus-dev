@@ -7,7 +7,7 @@ draft: false
 ---
 
 Te dicen que uses una clave larga, segura, con caracteres y cosas en cada cuenta.
-Es buen consejo pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
+Es buen consejo, pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
 sitios? Piensa en cuántos números de teléfono te sabes de memoria: el tuyo, y
 ojalá, el de tu mamá.
 
