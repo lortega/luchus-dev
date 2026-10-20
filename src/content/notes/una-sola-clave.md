@@ -37,8 +37,7 @@ celular ya trae una, [Contraseñas](https://support.apple.com/es-lamr/120758) en
 el iPhone y el [gestor de Google](https://passwords.google/intl/es-419/) en
 Android.
 
-Ahora, tienes claro que si se te pierde esa clave te quedas con el problema hasta
-el cuello, ¿verdad? Cómo protegerla es la [próxima nota](/notas/una-clave-no-basta/).
+Ahora, tienes claro que si se te pierde esa clave, FIN. Cómo protegerla es la [próxima nota](/notas/una-clave-no-basta/).
 
 Lo primero que puedes hacer hoy es entrar a <span class="nota">[haveibeenpwned.com](https://haveibeenpwned.com)<span class="nota__texto">Es
 seguro. Lo creó [Troy Hunt](https://www.troyhunt.com/about/), un investigador de
