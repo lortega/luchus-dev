@@ -10,16 +10,16 @@ Te dicen que uses una clave larga, segura, con caracteres y cosas en cada cuenta
 Es buen consejo pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
 sitios? Piensa en cuántos números de teléfono te sabes de memoria: el tuyo, y
 ojalá, el de tu mamá. Antes te sabías los de tus amigos porque estabas marcándolos
-seguido...
+seguido.
 
-Bueno, repetirlas es justo lo que un atacante está esperando. Si compraste en una
-tienda y esa tienda sufre una filtración, tu correo y tu clave van a terminar
-publicados en internet. Va a llegar un personaje y va a tomar el par correo y
-clave, lo va a ocupar con tu Instagram, con tu banco, y así... con miles de
-personas de una. Si la clave era efectivamente la misma, sonaste.
+Una solución que se te puede ocurrir es que ocupemos la misma clave en todos lados
+pero eso es justo lo que un atacante está esperando. Si compraste en una
+tienda y esa tienda sufre una filtración, tus credenciales van a terminar
+publicados en internet. Tomarán tus credenciales y van a ir al banco, al instagram
+y etc. Si la clave era efectivamente la misma, sonaste.
 
 Yo siempre digo que antes de resolver algo hay que definir bien el problema. Y
-acá el problema no es tu memoria, es que te piden acordarte de cuarenta claves.
+acá el problema es que son muchas claves para tu memoria.
 
 Cómo lo hago yo. Me acuerdo de una pura clave, que no esté usando en ningún otro
 lado. Que sea larga, de unas cuatro o cinco palabras random, tipo
