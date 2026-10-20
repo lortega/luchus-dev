@@ -20,9 +20,10 @@ y etc. Si la clave era efectivamente la misma, FIN.
 Yo siempre digo que antes de resolver algo hay que definir bien el problema. Y
 acá el problema es que son muchas claves para tu cerebruto.
 
-Cómo lo hago yo. Me acuerdo de una pura clave, que no esté usando en ningún otro
-sitio. Que sea larga, de unas cuatro o cinco palabras random, tipo
-*jurel-lampara-nube-cordillera* (es un ejemplo). Con esa clave abres tu gestor de
+Cómo lo hago yo. Me acuerdo de <span class="nota"><span class="nota__gatillo">una pura clave</span>,<span class="nota__texto">Que
+sea larga, de unas cuatro o cinco palabras random, tipo
+*jurel-lampara-nube-cordillera* (es un ejemplo).</span></span> que no esté usando
+en ningún otro sitio. Con esa clave abres tu gestor de
 claves, que es una aplicación para inventar el resto de tus claves, las guarda y te
 las escribe cuando entras en diferentes sitios. Es tu caja fuerte de claves, y tú
 solo te preocupas de la llave. No te vas a saber ni una, pero bien, es lo que
