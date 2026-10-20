@@ -6,22 +6,22 @@ tags: [seguridad, claves]
 draft: false
 ---
 
-Te dicen que uses una clave larga, segura, con caracteres y cosas en cada cuenta.
+Te dicen que uses una clave larga, segura, con caracteres y cosas en cada sitio.
 Es buen consejo, pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
 sitios? Piensa en cuántos números de teléfono te sabes de memoria: el tuyo, y
 ojalá, el de tu mamá.
 
-Una solución que se te puede ocurrir es que ocupemos la misma clave en todos lados
+Una solución que se te puede ocurrir es que ocupemos la misma clave en todos lados,
 pero eso es justo lo que un atacante está esperando. Si compraste en una
 tienda y esa tienda sufre una filtración, tus credenciales van a terminar
-publicados en internet. Tomarán tus credenciales y van a ir al banco, al instagram
-y etc. Si la clave era efectivamente la misma, sonaste.
+publicadas en internet. Tomarán tus credenciales y van a ir al banco, al Instagram
+y etc. Si la clave era efectivamente la misma, FIN.
 
 Yo siempre digo que antes de resolver algo hay que definir bien el problema. Y
-acá el problema es que son muchas claves para tu memoria.
+acá el problema es que son muchas claves para tu cerebruto.
 
 Cómo lo hago yo. Me acuerdo de una pura clave, que no esté usando en ningún otro
-lado. Que sea larga, de unas cuatro o cinco palabras random, tipo
+sitio. Que sea larga, de unas cuatro o cinco palabras random, tipo
 *jurel-lampara-nube-cordillera* (es un ejemplo). Con esa clave abres tu gestor de
 claves, que es una aplicación para inventar el resto de tus claves, las guarda y te
 las escribe cuando entras en diferentes sitios. Es tu caja fuerte de claves, y tú
