@@ -9,7 +9,7 @@ export const getStaticPaths = (async () => {
   return [
     {
       params: { slug: 'sitio' },
-      props: { title: SITE.tagline, footer: `${SITE.author} · seguridad y FinOps` },
+      props: { title: SITE.tagline, footer: SITE.author },
     },
     ...entries.map(({ note, folio: n }) => ({
       params: { slug: `notas/${note.id}` },

@@ -4,6 +4,6 @@ export const SITE = {
   title: 'luchus.dev',
   author: 'Luis Ortega',
   tagline,
-  description: `${tagline} Notas de seguridad y FinOps.`,
+  description: 'Siempre tienes que definir tus problemas, si no, no se pueden resolver.',
   language: 'es',
 };
