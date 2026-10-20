@@ -6,48 +6,53 @@ tags: [seguridad, claves]
 draft: false
 ---
 
-Te dicen que uses una clave larga y distinta para cada cuenta. Es buen consejo,
-pero nadie lo puede cumplir. Piensa en cuántos números de teléfono te sabes de
-memoria: el tuyo y, con suerte, el de tu mamá. Antes te sabías los de todos tus
-amigos, porque los marcabas a diario. Una clave buena es como un número de
-teléfono: no tiene lógica, y la mayoría la usas una vez al mes. Tu cabeza no
-guarda eso, y nadie puede con cuarenta.
+Te dicen que uses una clave larga, segura, con caracteres y cosas en cada cuenta
+(sitio). Es buen consejo pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
+sitios? Piensa en cuántos números de teléfono te sabes de memoria: el tuyo, y
+ojalá, el de tu mamá. Antes te sabías los de tus amigos porque estabas marcándolos
+seguido... Una clave buena es igual que un número de teléfono porque no tiene
+lógica y la mayoría los usas una vez al mes. Está difícil, y no sé si se puede con
+cuarenta.
 
-Y repetirlas es justo lo que el atacante espera. Una tienda donde compraste una
-vez sufre una filtración, y tu correo y tu clave terminan publicados en internet.
-Nadie adivina nada: un programa toma ese par y lo prueba en tu correo, en tu banco,
-en tu Instagram, con miles de personas a la vez. Si la clave es la misma, entra.
+Bueno, repetirlas es justo lo que un atacante está esperando. Si compraste en una
+tienda y esa tienda sufre una filtración, tu correo y tu clave van a terminar
+publicados en internet. Va a llegar un personaje y va a tomar el par correo y
+clave, lo va a ocupar con tu Instagram, con tu banco, y así... con miles de
+personas de una. Si la clave era efectivamente la misma, sonaste.
 
-Así que deja de intentar acordarte de todas. Te cuento mi truco: me acuerdo de una sola clave, que
-no uso en ningún otro lado. Que sea larga: cuatro o cinco palabras al azar, del
-estilo *jurel-lampara-nube-cordillera*. Esa no, que ya está publicada.
+Yo siempre digo que antes de resolver algo hay que definir bien el problema. Y
+acá el problema no es tu memoria, es que te piden acordarte de cuarenta claves.
 
-Esa clave abre un gestor de claves, una app que inventa todas las demás, las guarda
-y las escribe por ti cuando entras a cada sitio. Es una caja fuerte con todas tus
-llaves: tú solo cuidas la llave de la caja. No te vas a saber ninguna, y no
-importa: si un día necesitas una, abres la caja y ahí está. Si se filtra la
-tienda, el atacante se lleva la clave de la tienda. Nada más.
+Cómo lo hago yo. Me acuerdo de una pura clave, que no esté usando en ningún otro
+lado. Que sea larga, de unas cuatro o cinco palabras random, tipo
+*jurel-lampara-nube-cordillera* (es un ejemplo). Con esa clave abres tu gestor de
+claves, que es una aplicación para inventar el resto de tus claves, las guarda y te
+las escribe cuando entras en diferentes sitios. Es tu caja fuerte de claves, y tú
+solo te preocupas de la llave. No te vas a saber ni una, pero bien, es lo que
+queremos, si un día necesitas una sólo vas y abres la caja y allí va a estar. Si se
+filtra la tienda, la tienes que cambiar, pero sólo la clave de la tienda. ¿Se
+entiende?
 
 ![Antes: la misma clave en la tienda, el correo, el banco e Instagram; se filtra la tienda y entran a todo. Después: una sola clave abre una caja fuerte, el gestor, que guarda una clave distinta para cada cuenta; se filtra la tienda y entran solo a la tienda.](/imagenes/claves-antes-y-despues.svg)
 
-Cajas fuertes de este tipo hay varias. [Bitwarden](https://bitwarden.com/es-la/)
-es gratis y [1Password](https://1password.com/es) es pagado. Si no quieres instalar
-nada, tu celular ya trae una: [Contraseñas](https://support.apple.com/es-lamr/120758) en el
-iPhone y el [gestor de Google](https://passwords.google/intl/es-419/) en Android.
+Cajas fuertes hay varias. [Bitwarden](https://bitwarden.com/es-la/) es gratis,
+[1Password](https://1password.com/es) es pagado, y si no quieres instalar nada tu
+celular ya trae una, [Contraseñas](https://support.apple.com/es-lamr/120758) en
+el iPhone y el [gestor de Google](https://passwords.google/intl/es-419/) en
+Android.
 
-Ahora todo depende de esa clave. Cómo protegerla es la [próxima
-nota](/notas/una-clave-no-basta/).
+Ahora, tienes claro que si se te pierde esa clave te quedas con el problema hasta
+el cuello, ¿verdad? Cómo protegerla es la [próxima nota](/notas/una-clave-no-basta/).
 
-Hoy, entra a <span class="nota">[haveibeenpwned.com](https://haveibeenpwned.com)<span class="nota__texto">Es
-seguro: lo creó
-[Troy Hunt](https://www.troyhunt.com/about/), un investigador de seguridad
-australiano, y decenas de gobiernos lo usan para proteger a sus ciudadanos. Fíjate
-que solo te pide el correo: si un sitio te pide tu clave para decirte si se filtró,
-desconfía.</span></span> y escribe tu correo. Está en inglés: si dice *Oh no —
-pwned!*, tu correo apareció en alguna filtración; si dice *Good news — no pwnage
-found!*, no. Si apareció y usas la misma clave en
-todos lados, deja de repetirla hoy. Parte por tu correo: ponle una clave nueva y
-que la guarde tu gestor. Las demás, de a una, a medida que vayas entrando.
+Lo primero que puedes hacer hoy es entrar a <span class="nota">[haveibeenpwned.com](https://haveibeenpwned.com)<span class="nota__texto">Es
+seguro. Lo creó [Troy Hunt](https://www.troyhunt.com/about/), un investigador de
+seguridad australiano, y decenas de gobiernos lo usan para proteger a sus
+ciudadanos. Fíjate que solo te pide el correo, y si algún sitio te pide la clave
+para decirte si se filtró, desconfía.</span></span> y poner tu correo. Está en
+inglés... si te sale *Oh no — pwned!* tu correo apareció en alguna filtración, y si
+te sale *Good news — no pwnage found!*, no. Si apareció y usas la misma clave en
+todos lados, parte por cambiar la del correo y que la guarde el gestor. Las demás
+las vas cambiando de a una, a medida que vayas entrando.
 
 Así lo hago yo. Si tú lo haces distinto, cuéntame por
 [LinkedIn](https://www.linkedin.com/in/luis-ortega-araneda/).
