@@ -6,8 +6,8 @@ tags: [seguridad, claves]
 draft: false
 ---
 
-Te dicen que uses una clave larga, segura, con caracteres y cosas en cada cuenta
-(sitio). Es buen consejo pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
+Te dicen que uses una clave larga, segura, con caracteres y cosas en cada cuenta.
+Es buen consejo pero ¿cómo nos vamos a acordar cuando tengamos cuarenta
 sitios? Piensa en cuántos números de teléfono te sabes de memoria: el tuyo, y
 ojalá, el de tu mamá. Antes te sabías los de tus amigos porque estabas marcándolos
 seguido... Una clave buena es igual que un número de teléfono porque no tiene
